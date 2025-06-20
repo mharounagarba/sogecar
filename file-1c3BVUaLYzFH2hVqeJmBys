@@ -1,0 +1,43 @@
+
+-- Table utilisateurs
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    role TEXT CHECK(role IN ('admin', 'user', 'viewer')) NOT NULL
+);
+
+-- Table assurés
+CREATE TABLE IF NOT EXISTS assures (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    matricule TEXT UNIQUE NOT NULL,
+    nom TEXT NOT NULL,
+    prenom TEXT NOT NULL,
+    dateNais TEXT,
+    categorie TEXT,
+    sitFamille TEXT,
+    sexe TEXT
+);
+
+-- Table bénéficiaires
+CREATE TABLE IF NOT EXISTS beneficiaires (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    matriculeAssure TEXT NOT NULL,
+    nom TEXT NOT NULL,
+    prenom TEXT NOT NULL,
+    dateNais TEXT,
+    lienFamille TEXT,
+    FOREIGN KEY (matriculeAssure) REFERENCES assures(matricule)
+);
+
+-- Table actes médicaux
+CREATE TABLE IF NOT EXISTS actes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    type TEXT,
+    centre TEXT,
+    typePEC TEXT,
+    montant REAL,
+    date TEXT,
+    matricule TEXT,
+    FOREIGN KEY (matricule) REFERENCES assures(matricule)
+);

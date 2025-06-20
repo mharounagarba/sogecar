@@ -1,0 +1,17 @@
+.topbar {
+    height: 60px;
+    background-color: #e5f1ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .topbar button {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  

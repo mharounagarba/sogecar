@@ -10,4 +10,10 @@ module.exports = (ipcMain, db) => {
     `).run(data.matriculeAssure, data.nom, data.prenom, data.dateNais, data.lienFamille)
     return { success: true }
   })
+
+  ipcMain.handle('beneficiaires:delete', (e, id) => {
+  db.prepare('DELETE FROM beneficiaires WHERE id = ?').run(id)
+  return { success: true }
+})
+
 }

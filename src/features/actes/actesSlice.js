@@ -5,6 +5,8 @@ export const fetchActes = createAsyncThunk('actes/fetch', async () => {
 })
 
 export const addActe = createAsyncThunk('actes/add', async (acte) => {
+  console.log(acte);
+  
   await window.api.addActe(acte)
   return acte
 })

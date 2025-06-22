@@ -22,3 +22,4 @@ private
 *.njsproj
 *.sln
 *.sw?
+.env

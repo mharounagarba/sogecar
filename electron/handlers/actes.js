@@ -15,4 +15,13 @@ module.exports = (ipcMain, db) => {
     db.prepare('DELETE FROM actes WHERE id = ?').run(id)
     return { success: true }
   })
+
+  ipcMain.handle('actes:update', (event, acte) => {
+    db.prepare(`
+      UPDATE actes
+      SET type = ?, centre = ?, typePEC = ?, montant = ?, date = ?, matricule = ?
+      WHERE id = ?
+    `).run(acte.type, acte.centre, acte.typePEC, acte.montant, acte.date, acte.matricule, acte.id)
+    return { success: true }
+  })
 }

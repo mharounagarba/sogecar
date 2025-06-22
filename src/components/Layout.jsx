@@ -1,6 +1,7 @@
 import Sidebar from './Sidebar'
 import Topbar from './Topbar'
 import './Layout.css'
+import UpdateManager from './UpdateManager'
 
 export default function Layout({ children }) {
   return (
@@ -12,6 +13,7 @@ export default function Layout({ children }) {
           {children}
         </div>
       </main>
+      <UpdateManager />
     </div>
   )
 }

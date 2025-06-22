@@ -1,7 +1,7 @@
 {
   "name": "exgecar",
   "homepage": "./",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "eXpert en Courtage, Assurance & Réassurances",
   "main": "electron/main.js",
   "author": "3S Consulting",
@@ -16,24 +16,23 @@
     "appId": "com.exgecar.apps",
     "productName": "eXgecar",
     "files": [
-      "dist/**/*",
-      "electron/**/*",
-      "package.json"
+      "dist/",
+      "electron/",
+      "!**/*.map",
+      "!**/*.db",
+      "!**/*.md"
     ],
     "directories": {
       "buildResources": "assets"
     },
     "win": {
-      "publish": [
-        "github"
-      ],
       "target": [
         "nsis"
       ],
       "icon": "assets/icon.ico",
-      "certificateFile": "private/eXgecar.pfx",
+      "cscLink": "private/eXgecar.pfx",
       "verifyUpdateCodeSignature": false,
-      "publisherName": "eXgecar"
+      "legalTrademarks": "eXgecar, produit 3S Consulting"
     },
     "mac": {
       "target": [
@@ -52,7 +51,7 @@
       "owner": "mharounagarba",
       "repo": "sogecar",
       "private": false,
-      "releaseType": "draft"
+      "releaseType": "release"
     },
     "nsis": {
       "oneClick": false,
@@ -64,6 +63,9 @@
       "createStartMenuShortcut": true
     }
   },
+  "electronDownload": {
+    "useSymLinks": false
+  },
   "scripts": {
     "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
     "build": "vite build",
@@ -72,18 +74,28 @@
     "electron": "electron electron/main.js",
     "electron-dev": "concurrently \"yarn dev\" \"wait-on http://localhost:5173 && electron .\"",
     "rebuild": "electron-rebuild -f -w better-sqlite3",
-     "dist": "electron-builder -w",
-    "make-cert": "electron-builder create-self-signed-cert -p eXgecar",
-    "deploy": "electron-builder build -w -p onTagOrDraft"
+    "dist": "electron-builder -w",
+    "deploy": "electron-builder build -w -p always",
+    "postinstall": "electron-builder install-app-deps",
+    "make-cert": "electron-builder create-self-signed-cert -p eXgecar"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "bcryptjs": "^3.0.2",
     "better-sqlite3": "^11.10.0",
+    "dayjs": "^1.11.13",
+    "electron-updater": "^6.6.2",
+    "exceljs": "^4.4.0",
+    "file-saver": "^2.0.5",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.1",
+    "jspdf-autotable": "^5.0.2",
+    "pdf-lib": "^1.17.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.6.1",
+    "recharts": "^2.15.3",
     "uuid": "^11.1.0"
   },
   "devDependencies": {

@@ -1,52 +1,61 @@
 .login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-  background: #f4f6f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(135deg, #e8f0fe, #ffffff);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .login-form {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  width: 350px;
-  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
 }
 
 .login-form h2 {
-  margin-bottom: 1.5rem;
-  color: #0078D7;
   text-align: center;
+  margin-bottom: 1.5rem;
+  color: #0078d7;
+  font-weight: 600;
 }
 
 .login-form label {
-  font-weight: 600;
-  margin-top: 1rem;
-  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+  color: #333;
 }
 
 .login-form input {
-  width: 100%;
-  padding: 0.6rem;
-  margin-top: 0.3rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.login-form input:focus {
+  border-color: #0078d7;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 120, 215, 0.15);
 }
 
 .login-form button {
-  margin-top: 1.5rem;
-  padding: 0.8rem;
-  width: 100%;
-  background-color: #0078D7;
+  padding: 0.75rem;
+  background-color: #0078d7;
   color: white;
-  font-weight: bold;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: 6px;
   font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .login-form button:hover {
@@ -54,7 +63,44 @@
 }
 
 .error {
-  color: red;
   margin-top: 1rem;
+  color: #d32f2f;
+  font-size: 0.9rem;
   text-align: center;
+}
+
+/* bouton maj à part */
+.login-container > div {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.login-container > div button {
+  background: transparent;
+  border: none;
+  color: #0078d7;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.login-container > div button:hover {
+  color: #005fa3;
+}
+
+
+.open-db-btn {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.open-db-btn:hover {
+  background-color: #a4baca;
 }

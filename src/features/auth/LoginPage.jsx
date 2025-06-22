@@ -48,6 +48,16 @@ export default function LoginPage() {
         <button type="submit">Se connecter</button>
         {error && <p className="error">{error}</p>}
       </form>
+      <div className='update-btn'>
+        <button onClick={() => window.api.checkForUpdate()}>
+          🔄 Vérifier les mises à jour
+        </button>
+
+        <button onClick={() => window.api.openDbFolder()} className="open-db-btn">
+  📂 Ouvrir le dossier de la base
+</button>
+
+      </div>
     </div>
   )
 }

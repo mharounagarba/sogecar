@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain, shell } = require('electron')
-const path = require('path')
 const { autoUpdater } = require('electron-updater')
-const Database = require('better-sqlite3')
+const path = require('path')
+
 const createDB = require('./db/initDB.js')
 
 // 🧠 Variable globale pour accéder à la fenêtre principale
@@ -52,29 +52,28 @@ ipcMain.handle('update:install', () => {
 
 // ✅ Lancement de l’app
 app.whenReady().then(() => {
-  // 1. Initialiser la base de données
-  createDB()
+  const db = createDB() // ✅ Crée et retourne l’instance
+  createWindow()        // ✅ Ensuite on crée la fenêtre
 
-  // 2. Créer la fenêtre principale
-  createWindow()
+  // ✅ Handlers connectés à la base
+  require('./handlers/user.js')(ipcMain, db)
+  require('./handlers/actes.js')(ipcMain, db)
+  require('./handlers/assures.js')(ipcMain, db)
+  require('./handlers/beneficiaires.js')(ipcMain, db)
+  require('./handlers/clients')(ipcMain, db)
+require('./handlers/centres')(ipcMain, db)
+require('./handlers/assurances')(ipcMain, db)
 
-  // 3. Charger la base et les handlers
-  const db = new Database(path.join(__dirname, 'db/sogecar.db'))
-  require('./handlers/user')(ipcMain, db)
-  require('./handlers/actes')(ipcMain, db)
-  require('./handlers/assures')(ipcMain, db)
-  require('./handlers/beneficiaires')(ipcMain, db)
 
-  // 4. Lancer la vérification de mise à jour uniquement en prod
   if (!isDev) {
     setTimeout(() => {
       autoUpdater.checkForUpdatesAndNotify()
     }, 3000)
   }
 
-  // Test ping IPC
   ipcMain.handle('ping', () => 'pong depuis Electron 🧠')
 })
+
 
 // 🔐 MacOS + fermeture
 app.on('window-all-closed', () => {

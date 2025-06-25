@@ -1,0 +1,40 @@
+.beneficiaires-container {
+  padding: 1rem;
+}
+
+.beneficiaire-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.beneficiaires-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.beneficiaires-table th, .beneficiaires-table td {
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  text-align: left;
+}
+
+.search-bar {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.btn-delete {
+  background: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+button {
+  margin: 0 0.3rem;
+  padding: 0.4rem 0.6rem;
+}

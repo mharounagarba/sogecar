@@ -1,0 +1,33 @@
+.clients-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.clients-form input, .clients-form select {
+  flex: 1;
+  padding: 0.5rem;
+}
+.clients-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.clients-table th, .clients-table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+}
+.search-bar {
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+}
+.btn-primary {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+.btn-delete {
+  color: red;
+}

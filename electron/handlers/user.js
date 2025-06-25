@@ -11,16 +11,25 @@ module.exports = (ipcMain, db) => {
       : { success: false, error: 'Mot de passe invalide' }
   })
 
-  ipcMain.handle('user:create', (event, userData) => {
-    const { username, password, role } = userData
-    if (!username || !password || !role) return { success: false, message: 'Champs manquants' }
-
-    const hash = bcrypt.hashSync(password, 10)
-    try {
-      db.prepare('INSERT INTO users (username, password, role) VALUES (?, ?, ?)').run(username, hash, role)
-      return { success: true, message: 'Utilisateur créé ✅' }
-    } catch (err) {
-      return { success: false, message: 'Utilisateur déjà existant ou erreur' }
-    }
+ ipcMain.handle('getUsers', () => {
+    return db.prepare('SELECT id, username, role FROM users').all()
   })
+
+  ipcMain.handle('user:create', (e, user) => {
+    const hash = bcrypt.hashSync(user.password, 10)
+    const stmt = db.prepare('INSERT INTO users (username, password, role) VALUES (?, ?, ?)')
+    const info = stmt.run(user.username, hash, user.role)
+    return { id: info.lastInsertRowid, username: user.username, role: user.role }
+  })
+ipcMain.handle('user:update', (e, user) => {
+  const stmt = db.prepare('UPDATE users SET username = ?, role = ? WHERE id = ?')
+  stmt.run(user.username, user.role, user.id)
+  return { id: user.id, username: user.username, role: user.role }
+})
+
+
+  ipcMain.handle('user:delete', (e, id) => {
+    db.prepare('DELETE FROM users WHERE id = ?').run(id)
+  })
+
 }

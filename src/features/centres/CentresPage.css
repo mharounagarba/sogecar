@@ -1,0 +1,56 @@
+.centres-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.centres-table th,
+.centres-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.centres-table th {
+  background: #f9fafb;
+  font-weight: 600;
+  color: #333;
+  cursor: default;
+}
+
+.centres-table td button {
+  margin-right: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.centres-table td button:hover {
+  color: #d9534f;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-delete {
+  color: red;
+  cursor: pointer;
+}

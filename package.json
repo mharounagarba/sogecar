@@ -1,7 +1,7 @@
 {
   "name": "exgecar",
   "homepage": "./",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "eXpert en Courtage, Assurance & Réassurances",
   "main": "electron/main.js",
   "author": "3S Consulting",
@@ -16,7 +16,7 @@
     "appId": "com.exgecar.apps",
     "productName": "eXgecar",
     "files": [
-      "dist/",
+      "build/",
       "electron/",
       "!**/*.map",
       "!**/*.db",
@@ -96,7 +96,8 @@
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.6.1",
     "recharts": "^2.15.3",
-    "uuid": "^11.1.0"
+    "uuid": "^11.1.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

@@ -2,7 +2,11 @@ module.exports = (ipcMain, db) => {
   ipcMain.handle('centres:get', () => {
     return db.prepare('SELECT * FROM centres ORDER BY nom').all()
   })
-
+// Récupérer une 
+ ipcMain.handle('centres:getById', (e, id) => {
+    const stmt = db.prepare('SELECT * FROM centres WHERE id = ?')
+    return stmt.get(id)
+  })
   ipcMain.handle('centres:add', (e, data) => {
     const stmt = db.prepare(`
       INSERT INTO centres (nom, type, convention, adresse, ville, contact)

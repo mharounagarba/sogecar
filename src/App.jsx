@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import Layout from './components/Layout'
+
 import Dashboard from './components/Dashboard'
 import DashboardMonthly from './components/DashboardMonthly'
 import DashboardFilter from './components/DashboardFilter'
 import PECAlerts from './components/PECAlerts'
 import ActeForm from './features/actes/ActeForm'
+import Layout from './components/layout/Layout'
 
 function App() {
  

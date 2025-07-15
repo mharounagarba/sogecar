@@ -1,4 +1,4 @@
-import Layout from '../../components/Layout'
+
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { addAssure, fetchAssures } from './assuresSlice'
@@ -6,6 +6,7 @@ import { exportAssuresToExcel } from '../../utils/exportExcel'
 import ListeAssures from './ListeAssures'
 import FicheAssure from './FicheAssure'
 import './AssuresPage.css'
+import Layout from '../../components/layout/Layout'
 
 export default function AssuresPage() {
   const dispatch = useDispatch()

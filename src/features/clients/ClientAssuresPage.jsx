@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import Layout from '../../components/Layout'
+import Layout from '../../components/layout/Layout'
+
 
 export default function ClientAssuresPage() {
     const navigate = useNavigate()

@@ -3,7 +3,11 @@ module.exports = (ipcMain, db) => {
   ipcMain.handle('assurances:get', () => {
     return db.prepare('SELECT * FROM assurances ORDER BY date_saisie DESC').all()
   })
-
+// Récupérer une 
+ ipcMain.handle('assurances:getById', (e, id) => {
+    const stmt = db.prepare('SELECT * FROM assurances WHERE id = ?')
+    return stmt.get(id)
+  })
   // Ajouter une nouvelle assurance
   ipcMain.handle('assurances:add', (e, data) => {
     const stmt = db.prepare(`

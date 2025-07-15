@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import Layout from '../../components/Layout'
+
 import { fetchCentres } from './centresSlice'
 import CentreModal from './CentreModal'
 import './CentresPage.css'
+import Layout from '../../components/layout/Layout'
 
 export default function CentresPage() {
   const dispatch = useDispatch()

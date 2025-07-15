@@ -1,17 +1,17 @@
 import jsPDF from 'jspdf'
-import 'jspdf-autotable'
+import autoTable from 'jspdf-autotable'
 
-export function exportAssurancesToPDF(assurance) {
+export function exportAssuranceToPDF(assurance) {
   const doc = new jsPDF()
 
   doc.setFontSize(18)
-  doc.text('Fiche d’Assurance', 14, 20)
+  doc.text('Fiche d’Assurance', 154, 20)
 
   const data = Object.entries(assurance).map(([key, value]) => [
     key, String(value ?? '')
   ])
 
-  doc.autoTable({
+  autoTable(doc,{
     startY: 30,
     head: [['Champ', 'Valeur']],
     body: data

@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import Layout from '../../components/Layout'
+
 import FicheBeneficiaire from './FicheBeneficiaire'
 import { exportBeneficiairesToExcel } from '../../utils/exportBeneficiaires'
 import { exportBeneficiairesToPDF } from '../../utils/exportBeneficiairesPDF'
 import './BeneficiairesPage.css'
 import FicheBeneficiaireModal from './FicheBeneficiaireModal'
+import Layout from '../../components/layout/Layout'
 
 export default function BeneficiairesPage() {
   const [beneficiaires, setBeneficiaires] = useState([])

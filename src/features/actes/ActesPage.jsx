@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchActes, addActe, deleteActe } from './actesSlice'
-import Layout from '../../components/Layout'
+
 import { exportActesToExcel } from '../../utils/exportExcel'
 import { exportActesToPDF } from '../../utils/exportActesPDF'
 import ActeModal from './ActeModal'
 import ActeFormModal from './ActeFormModal'
 import './ActesPage.css'
+import Layout from '../../components/layout/Layout'
 
 export default function ActesPage() {
   const dispatch = useDispatch()

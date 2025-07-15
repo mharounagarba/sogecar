@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchUsers, addUser, deleteUser, updateUser } from './usersSlice'
-import Layout from '../../components/Layout'
+
 import UserModal from './UserModal'
 import './CreateUser.css'
+import Layout from '../../components/layout/Layout'
 
 
 export default function CreateUser() {

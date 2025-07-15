@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginSuccess, loginFailure } from './authSlice'
+import logo from '../../assets/logex.png'
+import { HiOutlineExclamationCircle } from 'react-icons/hi'
 
 export default function LoginPage() {
   const [username, setUsername] = useState('')
@@ -26,38 +28,40 @@ export default function LoginPage() {
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleLogin}>
-        <h2>Connexion à SOGECAR</h2>
+        <img src={logo} alt="Logo eXgecar" className="login-logo" />
+        <h2>Connexion</h2>
 
-        <label>Nom d'utilisateur</label>
-        <input
-          value={username}
-          onChange={e => setUsername(e.target.value)}
-          placeholder="admin"
-          required
-        />
+        <div className={`form-group ${username && 'filled'}`}>
+          <label>Nom d'utilisateur</label>
+          <input
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+            required
+          />
+        </div>
 
-        <label>Mot de passe</label>
-        <input
-          type="password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          placeholder="••••••••"
-          required
-        />
+        <div className={`form-group ${password && 'filled'}`}>
+          <label>Mot de passe</label>
+          <input
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            required
+          />
+        </div>
 
-        <button type="submit">Se connecter</button>
-        {error && <p className="error">{error}</p>}
-      </form>
-      <div className='update-btn'>
-        <button onClick={() => window.api.checkForUpdate()}>
-          🔄 Vérifier les mises à jour
-        </button>
-
-        <button onClick={() => window.api.openDbFolder()} className="open-db-btn">
-  📂 Ouvrir le dossier de la base
+        <button type="submit" className="btn-login">🔐 Se connecter</button>
+         <button onClick={() => window.api.close()} className="exit-btn">
+  Fermer
 </button>
+{error && (
+  <p className={`error ${error ? 'shake' : ''}`}>
+    <HiOutlineExclamationCircle style={{ marginRight: '6px', verticalAlign: 'middle' }} />
+    {error}
+  </p>
+)}
 
-      </div>
+      </form>
     </div>
   )
 }

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import Layout from '../../components/Layout'
+
 import './ClientsPage.css'
 import ClientModal from './ClientModal'
+import Layout from '../../components/layout/Layout'
 
 export default function ClientsPage() {
   const [clients, setClients] = useState([])

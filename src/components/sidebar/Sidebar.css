@@ -1,0 +1,129 @@
+.sidebar {
+  width: 240px;
+  background-color: #ffffff;
+  /* height: 100%; */
+  /* padding: 1rem; */
+  border-right: 1px solid #ddd;
+  margin: var(--margin);
+  border-radius: var(--border);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.sidebar-section {
+  margin-bottom: 0.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  color: #333;
+  transition: background 0.2s;
+  border-radius: 5px;
+  user-select: none;
+
+}
+
+.section-header:hover {
+  background-color: #f0f4ff;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.section-items {
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  transition: max-height 0.3s ease;
+  padding-left: 0.75rem;
+}
+
+.section-items.open {
+  max-height: 500px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  color: #555;
+  text-decoration: none;
+  /* transition: background 0.2s, color 0.2s; */
+}
+
+.sidebar-link:hover {
+  background-color: #e8f0fe;
+  color: #0078d7;
+}
+
+.sidebar-link.active {
+  background-color: #dceeff;
+  color: #007bff;
+  font-weight: bold;
+  box-shadow:  0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+.logout-btn {
+  /* margin-top: auto; */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #c0392b;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #fdecea;
+  border-radius: 5px;
+}
+
+.section-items {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.section-items.open {
+  max-height: 500px; /* ou un grand max arbitraire */
+  opacity: 1;
+}
+
+.section-items {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.section-items.open {
+  max-height: 500px;
+  opacity: 1;
+}
+
+

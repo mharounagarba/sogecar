@@ -1,0 +1,136 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  padding: 0.5rem 0;
+  /* animation: slide-in 0.3s ease-out; */
+}
+.breadcrumb-item{
+    display: flex;
+  align-items: center;
+}
+.breadcrumb a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #0078d7;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+}
+
+.breadcrumb a:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.sep {
+  margin: 0 4px;
+  color: #aaa;
+}
+
+.crumb-icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  color: #444;
+  animation: slide-in 0.3s ease-out;
+}
+
+.crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  transition: background 0.2s ease, color 0.2s;
+  color: #0078d7;
+  text-decoration: none;
+}
+
+.crumb-hover:hover {
+  background: rgba(0, 120, 215, 0.1);
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.crumb-icon {
+  display: inline-flex;
+  font-size: 1rem;
+}
+
+.sep {
+  margin: 0 6px;
+  color: #ccc;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* src/components/Breadcrumb.css */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  font-size: 0.95rem;
+  background-color: transparent;
+  font-weight: 500;
+  color: #555;
+}
+
+.breadcrumb-link {
+  color: #0078d7;
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 20px;
+  transition: background-color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  background-color: rgba(0, 120, 215, 0.1);
+}
+
+.breadcrumb-separator {
+  margin: 0 0.3rem;
+  color: #999;
+}
+
+.breadcrumb-current {
+  color: #333;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+}

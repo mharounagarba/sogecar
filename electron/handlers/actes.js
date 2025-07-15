@@ -2,6 +2,11 @@ module.exports = (ipcMain, db) => {
   ipcMain.handle('actes:get', () => {
     return db.prepare('SELECT * FROM actes ORDER BY date DESC').all()
   })
+// Récupérer une 
+ ipcMain.handle('actes:getById', (e, id) => {
+    const stmt = db.prepare('SELECT * FROM actes WHERE id = ?')
+    return stmt.get(id)
+  })
 
   ipcMain.handle('actes:add', (event, acte) => {
     db.prepare(`

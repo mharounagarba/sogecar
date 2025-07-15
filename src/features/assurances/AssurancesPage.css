@@ -1,5 +1,5 @@
 /* Container principal */
-.assurance-form {
+/* .assurance-form {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -8,16 +8,16 @@
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
+} */
 
-.assurance-form input,
-.assurance-form select {
-  flex: 1 1 200px;
-  padding: 10px;
+/* .assurance-form input,
+.assurance-form select { */
+  /* flex: 1 1 200px; */
+  /* padding: 10px;
   border-radius: 8px;
   border: 1px solid #ddd;
   font-size: 14px;
-}
+} */
 
 .assurance-form button {
   background-color: #007bff;

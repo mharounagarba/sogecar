@@ -1,0 +1,46 @@
+
+.input-box {
+  position: relative;
+  /* flex: 1 1 250px; */
+  display: flex;
+  flex-direction: column;
+}
+
+.input-box input {
+  padding: 1.1rem 0.75rem 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1rem;
+  background: white;
+  transition: border-color 0.2s;
+}
+
+.input-box input:focus {
+  border-color: #0078d7;
+}
+
+.input-box label {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.75rem;
+  font-size: 0.95rem;
+  color: #666;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background: white;
+  padding: 0 4px;
+}
+
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+  top: -0.5rem;
+  left: 0.6rem;
+  font-size: 0.75rem;
+  color: #0078d7;
+}
+
+.input-box.checkbox {
+  flex: 1 1 100%;
+  margin-top: 1rem;
+}

@@ -7,6 +7,16 @@ module.exports = (ipcMain, db) => {
     return db.prepare('SELECT * FROM beneficiaires').all()
   })
 
+    ipcMain.handle('beneficiaires:get', () => {
+    return db.prepare('SELECT * FROM beneficiaires ORDER BY nom').all()
+  })
+
+// Récupérer une 
+ ipcMain.handle('beneficiaires:getById', (e, id) => {
+    const stmt = db.prepare('SELECT * FROM beneficiaires WHERE id = ?')
+    return stmt.get(id)
+  })
+
   ipcMain.handle('beneficiaires:add', (e, data) => {
     db.prepare(`
       INSERT INTO beneficiaires (matriculeAssure, nom, prenom, dateNais, lienFamille)

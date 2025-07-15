@@ -2,6 +2,7 @@ import './Topbar.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../features/auth/authSlice'
 import { useNavigate } from 'react-router-dom'
+import Breadcrumb from './breadcrumd/Breadcrumb'
 
 export default function Topbar() {
   const { user, role } = useSelector(state => state.auth)
@@ -16,10 +17,11 @@ export default function Topbar() {
   return (
     <header className="topbar">
       <div className="topbar-left">
-        Connecté : <strong>{user}</strong> ({role})
+        
+         <Breadcrumb />
       </div>
       <div className="topbar-right">
-        <button onClick={handleLogout}>🚪 Déconnexion</button>
+        
       </div>
     </header>
   )

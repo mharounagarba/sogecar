@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>eXgecar - Chargement</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .logo {
+      width: 350px;
+      /* margin-bottom: 20px; */
+
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      margin-top: 1rem;
+      font-weight: 300;
+      font-size: 1rem;
+      color:  #0f172a;
+    }
+
+    .progress-bar {
+      width: 300px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50px;
+      margin: 5px auto 0;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      width: 0%;
+      background: #0f172a;;
+      transition: width 0.25s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="./logo.png" alt="eXgecar" class="logo">
+    <!-- <h1>eXgecar</h1> -->
+    <p class="subtitle" id="splash-label">Initialisation...</p>
+
+    <div class="progress-bar">
+      <div class="progress" id="progress-bar"></div>
+    </div>
+  </div>
+
+  <script>
+    const { ipcRenderer } = require('electron')
+
+    ipcRenderer.on('splash:progress', (_, percent) => {
+      document.getElementById('progress-bar').style.width = `${percent}%`
+    })
+
+    ipcRenderer.on('splash:label', (_, label) => {
+      document.getElementById('splash-label').textContent = label
+    })
+  </script>
+</body>
+</html>

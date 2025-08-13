@@ -1,0 +1,60 @@
+.assure-select {
+  position: relative;
+}
+
+.assure-select input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.assure-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 999;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.assure-dropdown li {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.assure-dropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+.assure-details {
+  margin-top: 1rem;
+  background: #f9f9f9;
+  border-left: 4px solid #0078d7;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.assure-details h4,
+.assure-details h5 {
+  margin: 0.5rem 0;
+}
+
+.assure-details ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.assure-dropdown li.add-new {
+  font-style: italic;
+  color: #0078d7;
+  border-top: 1px solid #eee;
+}
+.assure-dropdown li.add-new:hover {
+  background: #e6f0ff;
+}

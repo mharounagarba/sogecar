@@ -1,0 +1,36 @@
+.clients-list {
+  padding: 1rem;
+  border-radius: var(--border-radius);
+   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Actions : recherche & export */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  align-items: center;
+
+}
+
+.actions input[type="text"] {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-right: 1rem;
+}
+
+.actions button {
+  background-color: #28a745;
+  color: white;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: #218838;
+}

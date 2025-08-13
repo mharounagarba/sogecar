@@ -1,0 +1,27 @@
+.pec-alert-box {
+  background-color: #fff8e1;
+  border: 1px solid #ffecb3;
+  padding: 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pec-alert-box h4 {
+  margin: 0 0 1rem;
+  color: #e65100;
+  font-size: 1.1rem;
+}
+
+.pec-alert-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pec-alert-box li {
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+  color: #5d4037;
+}

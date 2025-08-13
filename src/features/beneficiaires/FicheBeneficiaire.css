@@ -1,0 +1,40 @@
+.fiche-beneficiaire {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  margin-top: 2rem;
+}
+
+.fiche-fields input,
+.fiche-fields select {
+  display: block;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.fiche-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.fiche-buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.fiche-buttons button:first-child {
+  background: #007bff;
+  color: white;
+}
+
+.fiche-buttons button:last-child {
+  background: #dc3545;
+  color: white;
+}

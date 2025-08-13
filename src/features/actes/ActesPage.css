@@ -1,0 +1,149 @@
+.actes-container {
+  padding: 2rem;
+  animation: fadeIn 0.5s ease;
+}
+
+.acte-form-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: #f7f9fc;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.acte-form-modern input,
+.acte-form-modern select {
+  padding: 0.6rem;
+  border: 1px solid #d0d7e2;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fff;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.acte-form-modern input:focus,
+.acte-form-modern select:focus {
+  border-color: #0078d7;
+}
+
+.btn-primary {
+  grid-column: span 2;
+  background-color: #0078d7;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #005fa3;
+}
+
+.actes-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-secondary {
+  background-color: #f0f2f5;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #d0d7e2;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-secondary:hover {
+  background-color: #e2e6eb;
+}
+
+.actes-table-wrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px #e1e5ec;
+}
+
+.actes-table-modern {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background: white;
+}
+
+.actes-table-modern th {
+  background-color: #f5f7fa;
+  text-align: left;
+  padding: 0.75rem;
+  color: #333;
+}
+
+.actes-table-modern td {
+  padding: 0.75rem;
+  border-top: 1px solid #e1e5ec;
+}
+
+.btn-delete {
+  background: transparent;
+  border: none;
+  color: #e74c3c;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  color: #c0392b;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pagination {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.pagination button {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  margin: 0 3px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  font-weight: bold;
+  background: #0078d7;
+  color: white;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.stats-bar {
+  display: flex;
+  gap: 2rem;
+  margin: 1rem 0;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.date-filters {
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}

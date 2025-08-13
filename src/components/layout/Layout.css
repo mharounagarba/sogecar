@@ -1,0 +1,94 @@
+:root {
+
+    --txt-color: #232b3f;
+    
+    --main-color: #0f172a;
+    --second-color: #0078d7;
+    --second-bg: #dceeff;
+    --bg-color: #0f172a;
+    --grey-color: #ccc;
+    --light-color : #f2f2f2;
+    --white-color:white;
+ --border-color: #555;
+    --border: 1px solid #0078d7;
+    --border-radius: 5px;
+    --box-shadow: 0 0px 1px hsl(0deg 0% 0% / 20%), 0 1px 2px hsl(0deg 0% 0% / 20%);
+    /* --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+
+
+ --border : 5px;
+  --margin: 5px;
+  --padding: 5px;
+    --font-size: 14px;
+
+
+    --button-bg: #0000ff;
+    --button-hover: #ccc;
+
+    --header-height: 30px;
+    --navbar-width: 190px;
+
+
+    /* dark */
+    --dark-color: #444242;
+}
+
+/* === GLOBAL RESET === */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--txt-color);
+  font-size: 1rem;
+
+}
+
+/* === LAYOUT PRINCIPAL === */
+.layout {
+  display: flex;
+  height: calc(100vh - 36px); /* - Titlebar si fixe à 30px */
+  max-height: calc(100vh - 36px );
+  overflow: hidden;
+  background-color: var(--bg-color);
+  
+}
+
+
+/* === MAIN CONTENT AREA === */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* fix overflow-y */
+  overflow: hidden;
+   margin: var(--margin);
+  border-radius: var(--border);
+  
+}
+
+/* === TOPBAR === */
+.topbar {
+  height: 60px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  font-weight: 500;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  flex-shrink: 0;
+}
+
+/* === SCROLLABLE BODY === */
+.content-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 1rem;
+  background-color: #f9fafc;
+  min-height: 0; /* clé pour éviter un scroll inutile */
+    animation: fadeIn 0.9s ease;
+}

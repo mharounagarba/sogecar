@@ -1,0 +1,63 @@
+.input-box {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  background: none;
+  transition: border 0.3s;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+}
+
+/* Pour les inputs avec label animé */
+.input-box input:focus + .input-label,
+.input-box input:not(:placeholder-shown) + .input-label {
+  transform: translateY(-1.2rem) scale(0.85);
+  color: #007bff;
+}
+
+.input-box select + .input-label,
+.input-box select:focus + .input-label,
+.input-box select:not([value=""]) + .input-label {
+  top: -1rem;
+ 
+  font-size: 0.85rem;
+  color: #007bff;
+}
+
+.input-label {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  color: #666;
+  background-color: white;
+  padding: 0 0.3rem;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.input-box select {
+  background-color: white;
+}
+
+/* Erreur */
+.input-error {
+  color: red;
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+.has-error .input-field {
+  border-color: red;
+}
+
